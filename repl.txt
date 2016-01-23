@@ -85,7 +85,7 @@ xs.foldLeft(10)(_ + _)
 def something() = { println("calling something"); 1}
 something
 def callByValue(x: Int) = { println("x1=" + x); println("x2=" + x) }
-def callByName(x: Int) = { println("x1=" + x); println("x2=" + x) }
+def callByName(x: =>Int) = { println("x1=" + x); println("x2=" + x) }
 callByValue(something())
 callByName(something())
 def sum(f: Int => Int)(a: Int, b: Int) = (a to b map f).sum
